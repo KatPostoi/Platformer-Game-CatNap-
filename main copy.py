@@ -6,9 +6,9 @@ python -m arcade.examples.platform_tutorial.01_open_window
 import arcade
 
 # Constants
-WINDOW_WIDTH = 1920
-WINDOW_HEIGHT = 1080
-WINDOW_TITLE = "CatNap"
+WINDOW_WIDTH = 1280
+WINDOW_HEIGHT = 720
+WINDOW_TITLE = "Platformer"
 
 
 class GameView(arcade.Window):
@@ -21,10 +21,7 @@ class GameView(arcade.Window):
         # Call the parent class to set up the window
         super().__init__(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE)
 
-        #self.background_color = arcade.csscolor.CORNFLOWER_BLUE
-        # Загрузка изображения фона
-        self.background_image = arcade.load_texture(
-            "images/background.png")
+        self.background_color = arcade.csscolor.CORNFLOWER_BLUE
 
     def setup(self):
         """Set up the game here. Call this function to restart the game."""
@@ -40,14 +37,6 @@ class GameView(arcade.Window):
         self.clear()
 
         # Code to draw other things will go here
-
-        # Очистка экрана
-        arcade.start_render()
-
-        # Рисуем фоновое изображение
-        arcade.draw_texture_rect(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2,
-                                 WINDOW_WIDTH, WINDOW_HEIGHT,
-                                 self.background_image)
 
 
 def main():
